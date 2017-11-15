@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
 
-    // change this when on live server
-    var apiUrl = "http://localhost:5555/register";
+   var apiUrl = "http://138.197.16.143:5555";
+    //var apiUrl = "http://localhost:5555/register";
     $("#registerForm").submit(function (event) {
 
         
