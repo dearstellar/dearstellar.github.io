@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-
+  
   <html>
   <head>
      <title>Stellar Notifications</title>
   </head>
+    
+    <div class="header">
+        
+      <h1>Stellar Notifications</h1>
+
+    </div>
+
     <body>
 
-    <h1>Get Real-time Notifications For Your Stellar Account!</h1>
-
-      <div class="container">
-        <div id="statusMsg"></div>
-        <form id="registerForm">
+        <div class="column">
+      
+          <div class="container">
+        
+            <div id="statusMsg"></div>
+        
+              <form id="registerForm">
     
-          <div class="row">
+            <div class="row">
           
             <div class="col-25">
         
@@ -91,6 +100,112 @@
       </script>
       <script src="snapi.js"></script>
 
+    </div>
+    
+    <div class="column">
+                                   
+      <div class="textContainer">
+                                            
+        <h2>Get Real-time Notifications For Your Stellar Account!</h2>
+                                      
+        <body>Stellar Alerts is a notification system that alerts you whenever an operation
+        has been carried out on your Stellar account. Start receiving these notifications
+        by becoming a subscriber!</body>
+
+        <h3>A simple guide for you...</h3>
+      
+        <body>1. Complete the subscription form.</body>
+
+        <body> <p> 2. Enter your public key and at least one method of receiving notifications, then click on
+              the 'Start Receiving Alerts' button.
+              </p>
+              <p>Note that you can choose to receive notifications via all three methods.</p>
+        </body>
+
+      </div>
+
+    </div>
+
   </body>
 
+  <style> 
+
+    /* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4286f4;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container {
+    border-radius: 5px;
+    background-color: #f2f2f2; 
+    padding: 20px;
+}
+.textContainer {
+    border-radius: 5px;
+    background-color: #f2f2f2; 
+    padding: 20px;
+}
+
+.header {
+    background-color: #F1F1F1;
+    padding: 20px;
+}
+
+h2 {
+    color: #4286f4;
+}
+
+h3 {
+    color: #4286f4;
+}
+
+body {
+    background-color: #F1F1F1;
+}
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+ 
+  </style>
+
 </html>
+
