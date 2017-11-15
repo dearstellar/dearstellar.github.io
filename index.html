@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+  <html>
+  <head>
+     <title>Stellar Notifications</title>
+  </head>
+    <body>
+
+    <h1>Get Real-time Notifications For Your Stellar Account!</h1>
+
+      <div class="container">
+        <div id="statusMsg"></div>
+        <form id="registerForm">
+    
+          <div class="row">
+          
+            <div class="col-25">
+        
+              <label for="publicKey">Public Key</label>
+      
+            </div>
+
+            <div class="col-75">
+        
+              <input type="text" id="publicKey" name="publicKey" placeholder="GAL4RWXX55KGCXQT6LNMJI5XSUOXRT74M7NYPMBKBAH2WL4GPJDVIAJY" />
+      
+            </div>
+    
+          </div>
+
+          <div class="row">
+      
+            <div class="col-25">
+        
+              <label for="twitterHandle">Receive notifications via Twitter DM</label>
+      
+            </div>
+
+            <div class="col-75">
+       
+              <input type="text" id="twitterHandle" name="twitterHandle" placeholder="@johndoe" />
+            
+            </div>
+   
+          </div>
+
+          <div class="row">
+      
+            <div class="col-25">
+        
+              <label for="Email">Receive notifications via Email</label>
+      
+            </div>
+      
+            <div class="col-75">
+        
+              <input type="text" id="email" name="email" placeholder="johndoe@example.com" />
+      
+            </div>
+    
+          </div>
+
+          <div class="row">
+          
+            <div class="col-25">
+            
+              <label for="callbackUrl">Receive notifications via Callback URL</label>
+            
+            </div>
+
+            <div class="col-75">
+        
+              <input type="text" id="callbackUrl" name="callbackUrl" placeholder="http://johndoe.com/" />
+        
+            </div>
+      
+          </div>
+    
+          <div class="row">
+            <input type="submit" value="Subscribe">
+          
+          </div>
+
+        </form>
+
+      </div>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <script>
+        window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
+      </script>
+      <script src="snapi.js"></script>
+
+  </body>
+
+</html>
