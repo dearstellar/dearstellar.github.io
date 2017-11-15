@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-    var apiUrl = "138.197.16.143:5555/register"; 
+    var apiUrl = "https://api.stellaralerts.info/register"; 
     $("#registerForm").submit(function (event) {
 
         
