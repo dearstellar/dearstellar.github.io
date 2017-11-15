@@ -15,7 +15,7 @@ jQuery(document).ready(function ($) {
         var callbackUrl = $('#callbackUrl').val();
 
         var registerData = {
-            'publick_key': publicKey,
+            'public_key': publicKey,
             'email': email,
             'twitter_handle': twitterHandle,
             'callbackurl': callbackUrl
