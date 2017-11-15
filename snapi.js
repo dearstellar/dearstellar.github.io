@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
 
-    var apiUrl = "http://138.197.16.143:5555/register"; 
+    var apiUrl = "138.197.16.143:5555/register"; 
     $("#registerForm").submit(function (event) {
 
         
