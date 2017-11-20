@@ -19,7 +19,7 @@
         
             <div id="statusMsg"></div>
         
-              <form id="registerForm">
+              <form id="registerForm" onsubmit="return validateForm()">
     
             <div class="row">
           
@@ -31,7 +31,7 @@
 
             <div class="col-75">
         
-              <input type="text" id="publicKey" name="publicKey"  maxlength="56" minlength="56" placeholder="GAL4RWXX55KGCXQT6LNMJI5XSUOXRT74M7NYPMBKBAH2WL4GPJDVIAJY" />
+              <input type="text" id="publicKey" name="publicKey"  maxlength="56" minlength="56" placeholder="GAL4RWXX55KGCXQT6LNMJI5XSUOXRT74M7NYPMBKBAH2WL4GPJDVIAJY" required />
       
             </div>
     
@@ -79,14 +79,14 @@
 
             <div class="col-75">
         
-              <input type="text" id="callbackUrl" name="callbackUrl" placeholder="http://johndoe.com/" />
+              <input type="text" id="callbackUrl" name="callbackUrl" pattern="^(([^:/?#]+):)?(//([^/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?$" placeholder="http://johndoe.com/" />
         
             </div>
       
           </div>
     
           <div class="row">
-            <input type="submit" value="Subscribe">
+            <input type="submit" onclick="return validateForm()" value="Subscribe">
           
           </div>
 
@@ -94,11 +94,58 @@
 
       </div>
 
+      <script>
+        
+      function validateForm(){
+
+      var pk = document.forms["registerForm"]["publicKey"].value;
+      var em = document.forms["registerForm"]["email"].value;
+      var th = document.forms["registerForm"]["twitterHandle"].value;
+      var cbu = document.forms["registerForm"]["callbackUrl"].value;
+      var pkpattern = ".{56}";
+      var emailpattern = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$";
+      var twitterpattern = "@[a-z0-9]+$";
+      var cbupattern = "https?://.+"; 
+
+          if (pk == "" || !pk.match(pkpattern)) {
+            alert("Invalid Public Key! A valid public key must be entered");
+            publicKey.focus();
+            return false;
+          }
+
+          if(th !== "" && !th.match(twitterpattern)) {
+            twitterHandle.focus();
+            alert("Invalid twitter handle");
+            return false;
+          }
+
+          if(em !== "" && !em.match(emailpattern)) {
+            email.focus();
+            alert("Invalid email");
+            return false;
+          }
+          
+          if(cbu !== "" && !cbu.match(cbupattern)) {
+            callbackUrl.focus();
+            alert("Invalid callback URL");
+            return false;
+          }
+
+          else {
+            return true;
+          }
+
+      }
+
+      </script>
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script>
         window.jQuery || document.write('<script src="jquery.min.js"><\/script>')
       </script>
       <script src="snapi.js"></script>
+
+
 
     </div>
     
@@ -129,7 +176,6 @@
   </body>
 
   <style> 
-
     /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
     width: 100%; /* Full width */
@@ -141,7 +187,6 @@ input[type=text], select, textarea {
     margin-bottom: 16px; /* Bottom margin */
     resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
 }
-
 /* Style the submit button with a specific background color etc */
 input[type=submit] {
     background-color: #4286f4;
@@ -151,12 +196,10 @@ input[type=submit] {
     border-radius: 4px;
     cursor: pointer;
 }
-
 /* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
     background-color: #45a049;
 }
-
 /* Add a background color and some padding around the form */
 .container {
     border-radius: 5px;
@@ -168,20 +211,16 @@ input[type=submit]:hover {
     background-color: #f2f2f2; 
     padding: 20px;
 }
-
 .header {
     background-color: #F1F1F1;
     padding: 20px;
 }
-
 h2 {
     color: #4286f4;
 }
-
 h3 {
     color: #4286f4;
 }
-
 body {
     background-color: #F1F1F1;
 }
@@ -190,14 +229,12 @@ body {
     float: left;
     width: 50%;
 }
-
 /* Clear floats after the columns */
 .row:after {
     content: "";
     display: table;
     clear: both;
 }
-
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
 @media (max-width: 600px) {
     .column {
