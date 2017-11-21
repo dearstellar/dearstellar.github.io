@@ -104,7 +104,7 @@
       var cbu = document.forms["registerForm"]["callbackUrl"].value;
       var pkpattern = ".{56}";
       var emailpattern = "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$";
-      var twitterpattern = "@[a-z0-9]+$";
+      var twitterpattern = "@[a-zA-Z0-9]+$";
       var cbupattern = "https?://.+"; 
 
           if (pk == "" || !pk.match(pkpattern)) {
